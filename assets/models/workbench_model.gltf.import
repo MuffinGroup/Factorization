@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://choxwhtos84fb"
-path="res://.godot/imported/test.gltf-d5f8cceb4d558652e10a5eab20a26bc1.scn"
+uid="uid://m80xgopxdkgc"
+path="res://.godot/imported/workbench_model.gltf-591a961ea60974aa6bdcdd2ce3e871cd.scn"
 
 [deps]
 
-source_file="res://assets/models/test.gltf"
-dest_files=["res://.godot/imported/test.gltf-d5f8cceb4d558652e10a5eab20a26bc1.scn"]
+source_file="res://assets/models/workbench_model.gltf"
+dest_files=["res://.godot/imported/workbench_model.gltf-591a961ea60974aa6bdcdd2ce3e871cd.scn"]
 
 [params]
 
@@ -29,4 +29,4 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={}
-gltf/embedded_image_handling=2
+gltf/embedded_image_handling=1

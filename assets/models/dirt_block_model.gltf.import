@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://choxwhtos84fb"
-path="res://.godot/imported/test.gltf-d5f8cceb4d558652e10a5eab20a26bc1.scn"
+uid="uid://cf0e2tnf7paej"
+path="res://.godot/imported/dirt_block_model.gltf-de20f9c54f214370643ee97761a6cc9e.scn"
 
 [deps]
 
-source_file="res://assets/models/test.gltf"
-dest_files=["res://.godot/imported/test.gltf-d5f8cceb4d558652e10a5eab20a26bc1.scn"]
+source_file="res://assets/models/dirt_block_model.gltf"
+dest_files=["res://.godot/imported/dirt_block_model.gltf-de20f9c54f214370643ee97761a6cc9e.scn"]
 
 [params]
 
@@ -29,4 +29,4 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={}
-gltf/embedded_image_handling=2
+gltf/embedded_image_handling=1

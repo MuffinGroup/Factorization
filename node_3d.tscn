@@ -1,12 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://0stjic7kur5v"]
+[gd_scene load_steps=5 format=3 uid="uid://0stjic7kur5v"]
 
-[ext_resource type="PackedScene" uid="uid://choxwhtos84fb" path="res://test.gltf" id="1_uuqti"]
+[ext_resource type="Script" path="res://scripts/node_3d.cs" id="1_b7x45"]
+[ext_resource type="PackedScene" uid="uid://m80xgopxdkgc" path="res://assets/models/workbench_model.gltf" id="2_a3jnj"]
+[ext_resource type="Script" path="res://scripts/Camera3D.cs" id="2_xqpni"]
+[ext_resource type="PackedScene" uid="uid://cf0e2tnf7paej" path="res://assets/models/dirt_block_model.gltf" id="3_5rmi8"]
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_b7x45")
+
+[node name="test" parent="." instance=ExtResource("2_a3jnj")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+visible = false
+
+[node name="workbench_model" parent="." instance=ExtResource("2_a3jnj")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 63.0515, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.799127, 0.554495, -0.232229, 0.56655, -0.823841, -0.0175267, -0.201038, -0.117563, -0.972503, 121.32, 3.17947, 7.28174)
-fov = 179.0
+transform = Transform3D(-1, 2.91823e-08, -8.24083e-08, 0, 0.942641, 0.333807, 8.74228e-08, 0.333807, -0.942641, 62.204, 17, -15.935)
+fov = 75.4949
+script = ExtResource("2_xqpni")
 
-[node name="test" parent="." instance=ExtResource("1_uuqti")]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+[node name="dirt_block_model" parent="." instance=ExtResource("3_5rmi8")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 64, -10.2222, 0)
+
+[node name="dirt_block_model3" parent="." instance=ExtResource("3_5rmi8")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 73.3631, -10.2222, 0)
+
+[node name="dirt_block_model2" parent="." instance=ExtResource("3_5rmi8")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 53.971, -10.2222, 0)
+
+[node name="dirt_block_model4" parent="." instance=ExtResource("3_5rmi8")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 53.802, -10.2222, 9.97276)
+
+[node name="dirt_block_model5" parent="." instance=ExtResource("3_5rmi8")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 73.2811, -10.2222, 9.64519)
