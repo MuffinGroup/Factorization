@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://0stjic7kur5v"]
+[gd_scene load_steps=3 format=3 uid="uid://0stjic7kur5v"]
 
+[ext_resource type="Script" path="res://scripts/camera.cs" id="1_c0p4w"]
 [ext_resource type="PackedScene" uid="uid://choxwhtos84fb" path="res://test.gltf" id="1_uuqti"]
 
 [node name="Node3D" type="Node3D"]
@@ -7,6 +8,7 @@
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.799127, 0.554495, -0.232229, 0.56655, -0.823841, -0.0175267, -0.201038, -0.117563, -0.972503, 121.32, 3.17947, 7.28174)
 fov = 179.0
+script = ExtResource("1_c0p4w")
 
 [node name="test" parent="." instance=ExtResource("1_uuqti")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
