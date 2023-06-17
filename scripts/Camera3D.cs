@@ -10,7 +10,7 @@ public partial class Camera3D : Godot.Camera3D {
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta) {
     }
-    /*
+
     public override void _UnhandledInput(InputEvent @event) {
         var newPosition = Position;
         var newRotation = Rotation;
@@ -33,5 +33,4 @@ public partial class Camera3D : Godot.Camera3D {
         Position = newPosition;
         Rotation = newRotation;
     }
-    */
 }
