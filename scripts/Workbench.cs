@@ -1,17 +1,19 @@
 using Godot;
 using System;
 
-public partial class Camera3D : Godot.Camera3D {
+public partial class Workbench : Node3D
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
 
-    // Called when the node enters the scene tree for the first time.
-    public override void _Ready() {
-    }
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
 
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta) {
-    }
-    /*
-    public override void _UnhandledInput(InputEvent @event) {
+	public override void _UnhandledInput(InputEvent @event) {
         var newPosition = Position;
         var newRotation = Rotation;
         if (@event is InputEventKey eventKey) {
@@ -32,6 +34,5 @@ public partial class Camera3D : Godot.Camera3D {
         }
         Position = newPosition;
         Rotation = newRotation;
-    }
-    */
+	}
 }

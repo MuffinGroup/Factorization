@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://0stjic7kur5v"]
+[gd_scene load_steps=5 format=3 uid="uid://0stjic7kur5v"]
 
 [ext_resource type="PackedScene" uid="uid://m80xgopxdkgc" path="res://assets/models/workbench_model.gltf" id="2_a3jnj"]
+[ext_resource type="Script" path="res://scripts/Workbench.cs" id="2_a7d2c"]
 [ext_resource type="Script" path="res://scripts/Camera3D.cs" id="2_xqpni"]
 [ext_resource type="PackedScene" uid="uid://cf0e2tnf7paej" path="res://assets/models/dirt_block_model.gltf" id="3_5rmi8"]
 
@@ -12,6 +13,7 @@ visible = false
 
 [node name="workbench_model" parent="." instance=ExtResource("2_a3jnj")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 63.0515, 0, 0)
+script = ExtResource("2_a7d2c")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-1, 5.04035e-08, -1.42335e-07, 0, 0.942641, 0.333807, 1.50996e-07, 0.333807, -0.942641, 62.204, 17, -15.935)
