@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://di0titpx5exot"]
+[gd_scene load_steps=7 format=3 uid="uid://di0titpx5exot"]
 
 [ext_resource type="Script" path="res://scripts/node_3d.cs" id="1_emw3e"]
 [ext_resource type="PackedScene" uid="uid://m80xgopxdkgc" path="res://assets/models/workbench_model.gltf" id="2_a3jnj"]
 [ext_resource type="Script" path="res://scripts/Camera3D.cs" id="2_xqpni"]
 [ext_resource type="PackedScene" uid="uid://cf0e2tnf7paej" path="res://assets/models/dirt_block_model.gltf" id="3_5rmi8"]
+[ext_resource type="PackedScene" uid="uid://bawbj1cxh7154" path="res://assets/models/test.gltf" id="5_s0u3v"]
+[ext_resource type="Script" path="res://scripts/test.cs" id="6_lud7b"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -30,3 +32,7 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -10, 0)
 
 [node name="dirt_block_model5" parent="." instance=ExtResource("3_5rmi8")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -10, -10)
+
+[node name="test" parent="." instance=ExtResource("5_s0u3v")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -47.4436, 9.73314, -46.6217)
+script = ExtResource("6_lud7b")
