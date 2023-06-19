@@ -1,5 +1,5 @@
 using Godot;
 
-partial class Globabl : Node {
-    Vector3 dimension = new(16, 64, 16);
+public partial class Global : Node {
+    public static readonly Vector3 DIMENSION = new(16, 64, 16);
 }
