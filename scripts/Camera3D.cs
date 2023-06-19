@@ -32,5 +32,19 @@ public partial class Camera3D : Godot.Camera3D {
         }
         Position = newPosition;
         Rotation = newRotation;
+
+        /* Nice!!!
+        for (int idiot_run = 0; idiot_run <= 3; idiot_run ++){
+            idiot[idiot_run] = "Alex";
+
+            if (idiot_run != 0 && idiot_run != 1) {
+                GD.Print(idiot);
+            }
+        }
+
+        */
+
     }
+
+    public String[] idiot = new String[3];
 }
