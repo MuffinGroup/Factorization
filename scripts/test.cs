@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class test : Node3D
+public partial class Test : Node3D
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -28,5 +28,15 @@ public partial class test : Node3D
 
 		Position = newPosition;
 		Rotation = newRotation;
+
+        /* Nice!!!
+        for (int test_loop = 0; test_loop <= 3; test_loop ++){
+            test[test_loop] = "UwU";
+
+            if (test_loop != 0 && test_loop != 1) {
+                GD.Print(test);
+            }
+        }
+        */
     }
 }
