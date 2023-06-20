@@ -13,8 +13,7 @@ public partial class Test : Node3D
 	{
 	}
 
-    public override void _UnhandledInput(InputEvent @event)
-    {
+    public override void _UnhandledInput(InputEvent @event) {
 		var newPosition = Position;
 		var newRotation = Rotation;
 
