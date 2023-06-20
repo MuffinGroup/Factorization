@@ -21,6 +21,18 @@ public partial class Camera3D : Godot.Camera3D {
             if (eventKey.Pressed && eventKey.Keycode == Key.Down) {
                 newPosition.Y -= 1.0f;
             }
+            if (eventKey.Pressed && eventKey.Keycode == Key.A) {
+                newPosition.X += 1.0f;
+            }
+            if (eventKey.Pressed && eventKey.Keycode == Key.D) {
+                newPosition.X -= 1.0f;
+            }
+            if (eventKey.Pressed && eventKey.Keycode == Key.W) {
+                newPosition.Z += 1.0f;
+            }
+            if (eventKey.Pressed && eventKey.Keycode == Key.S) {
+                newPosition.Z -= 1.0f;
+            }
             if (eventKey.Pressed && eventKey.Keycode == Key.Right) {
                 newRotation.Y -= 0.1f;
             }
