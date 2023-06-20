@@ -10,34 +10,12 @@ public partial class Voxel : StaticBody3D
 	public override void _Ready()
     {
         // Create a new SurfaceTool
-        SurfaceTool st = new SurfaceTool();
-        
         // Begin generating the mesh
+        var st = new SurfaceTool();
         st.Begin(Mesh.PrimitiveType.Triangles);
-        
-        // Define the vertices of the voxel cube
-        st.AddVertex(new Vector3(-0.5f, -0.5f, -0.5f));
-        st.AddVertex(new Vector3(0.5f, -0.5f, -0.5f));
-        st.AddVertex(new Vector3(-0.5f, 0.5f, -0.5f));
-        st.AddVertex(new Vector3(0.5f, 0.5f, -0.5f));
-        st.AddVertex(new Vector3(-0.5f, -0.5f, 0.5f));
-        st.AddVertex(new Vector3(0.5f, -0.5f, 0.5f));
-        st.AddVertex(new Vector3(-0.5f, 0.5f, 0.5f));
-        st.AddVertex(new Vector3(0.5f, 0.5f, 0.5f));
-        
-        // Define the indices to form triangles
-        st.AddIndex(0);
-        st.AddIndex(2);
-        st.AddIndex(1);
-        st.AddIndex(1);
-        st.AddIndex(2);
-        st.AddIndex(3);
-        // ... continue adding indices for all triangles
-        
-        // Generate normals and UV coordinates if needed
-        st.GenerateNormals();
-        st.GenerateTangents();
+        st.SetColor(new Color(1, 0, 0));
         st.SetUV(new Vector2(0, 0));
+        st.AddVertex(new Vector3(0, 0, 0));
 
         // Create a new mesh and assign the generated surface to it
         Mesh voxelMesh = st.Commit();
