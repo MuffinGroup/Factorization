@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://di0titpx5exot"]
+[gd_scene load_steps=15 format=3 uid="uid://di0titpx5exot"]
 
 [ext_resource type="Script" path="res://scripts/node_3d.cs" id="1_emw3e"]
 [ext_resource type="PackedScene" uid="uid://m80xgopxdkgc" path="res://assets/models/workbench_model.gltf" id="2_a3jnj"]
@@ -6,17 +6,45 @@
 [ext_resource type="PackedScene" uid="uid://cf0e2tnf7paej" path="res://assets/models/dirt_block_model.gltf" id="3_5rmi8"]
 [ext_resource type="PackedScene" uid="uid://bawbj1cxh7154" path="res://assets/models/test.gltf" id="5_s0u3v"]
 [ext_resource type="Script" path="res://scripts/test.cs" id="6_lud7b"]
+[ext_resource type="Script" path="res://scripts/character.cs" id="6_q12ro"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qbkrj"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_r7fy5"]
+sky_material = SubResource("ProceduralSkyMaterial_qbkrj")
+
+[sub_resource type="Environment" id="Environment_8nlx1"]
+background_mode = 2
+sky = SubResource("Sky_r7fy5")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lv7df"]
+size = Vector2(100, 100)
+center_offset = Vector3(0, -10, 0)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fk0at"]
+data = PackedVector3Array(50, -10, 50, -50, -10, 50, 50, -10, -50, -50, -10, 50, -50, -10, -50, 50, -10, -50)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5khxb"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xnrhj"]
+points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607, 0.498884, 0.169713, 0.559144, 0.464172, 0.231051, -0.803591, 0.320455, 0.40741, 0.651043, -0.243523, -0.482789, 0.594843, 0.0822132, -0.362868, -0.682312, 0.289697, 0.469044, -0.654529, -0.0662713, -0.127444, 0.842701, -0.338103, -0.393435, -0.683942, -0.244717, 0.438255, 0.623309, 0.200849, 0.0841477, 0.977454, 0.114795, -0.0682023, -0.976458, -0.12927, 0.20055, -0.563129, -0.451454, -0.185527, 0.595453, -0.453475, -0.273363, 0.592268, 0.407754, -0.00693649, -0.476823, 0.49966, 0.375821, -0.588614, 0.316955, 0.111579, 0.563059, -0.481177, -0.41725, 0.527866, -0.270497, -0.484546, -0.596972, -0.0665097, -0.279747, 0.908561, 0.0533361, -0.250197, -0.880712, 0.205319, 0.263647, -0.902771, -0.127394, 0.293368, 0.871526, -0.157196, 0.373412, -0.526319, -0.328246, 0.499663, 0.476641, -0.00688856, 0.0531056, 0.875001, 0.324703, -0.154543, -0.590854, 0.465879, -0.0972799, -0.782358, -0.398188, -0.387649, -0.498171, 0.31565, -0.30068, -0.587995, -0.388901)
 
 [node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8nlx1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
 
 [node name="workbench_model" parent="." instance=ExtResource("2_a3jnj")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 script = ExtResource("1_emw3e")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, -0.707107, 0.707107, 0, 0.707107, 0.707107, -1, 3.09086e-08, -3.09086e-08, 21.0667, 22.453, 0)
-fov = 75.4949
-script = ExtResource("2_xqpni")
 
 [node name="dirt_block_model" parent="." instance=ExtResource("3_5rmi8")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -10, -10, 0)
@@ -34,5 +62,36 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -10, 0)
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -10, -10)
 
 [node name="test" parent="." instance=ExtResource("5_s0u3v")]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -47.4436, 9.73314, -46.6217)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 34.7472, 43.0678, -0.413681)
 script = ExtResource("6_lud7b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.333862, -0.103336, 0.0171814)
+mesh = SubResource("PlaneMesh_lv7df")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_fk0at")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.5045, 0)
+script = ExtResource("6_q12ro")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+transform = Transform3D(6.67038, 0, 0, 0, 12.5775, 0, 0, 0, 5.9308, -0.0796328, 3.05927, -0.718292)
+mesh = SubResource("CapsuleMesh_5khxb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(6.50816, 0, 0, 0, 12.5775, 0, 0, 0, 5.44194, -0.0576243, 3.05908, -0.716351)
+shape = SubResource("ConvexPolygonShape3D_xnrhj")
+
+[node name="neck" type="Node3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.8104, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/neck"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, -0.707107, 0.707107, 0, 0.707107, 0.707107, -1, 3.09086e-08, -3.09086e-08, 21.0667, 22.453, 0)
+fov = 75.4949
+script = ExtResource("2_xqpni")
